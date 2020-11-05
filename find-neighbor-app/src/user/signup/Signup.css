@@ -1,0 +1,47 @@
+
+.wrap{
+    bottom: 12rem;
+    max-width: 700px;
+    border-radius: 20px;
+    background: white;
+    padding: 30px;
+    color: black;
+    margin: 100px auto auto;
+    box-shadow: 0 4px 8px 0 red, 0 6px 20px 0 red;
+}
+
+.page-title {
+    text-align: center;
+}
+
+Input[type=text],
+Input[type=password],
+Input[type=email] {
+    width: 100%;
+    padding: 12px 5px;
+    background: rgba(0,0,0,0.1);
+    outline: none;
+    border: none;
+    color: black;
+    border-radius: 5px;
+    margin: 5px;
+    font-weight: bold;
+}
+.signup-form-button {
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 30px;
+    outline: none;
+    border: none;
+    background: red;
+    opacity: 0.7;
+    border-radius: 20px;
+    font-size: 20px;
+    color: white;
+}
+.signup-form-button:hover {
+    cursor: pointer;
+    background: #ea1f13;
+    color: white;
+    transition: .5s;
+}

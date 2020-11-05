@@ -1,0 +1,145 @@
+.main-image {
+    width: 100%;
+    height: 100%;
+    filter: brightness(40%);
+}
+
+.join-us {
+    position: absolute;
+    border-radius: 6px;
+    border: none;
+    color: #FFFFFF;
+    font-size: 24px;
+    transition: 250ms ease;
+    font-weight: bold;
+    width: 233px;
+    height: 60px;
+    left: 50%;
+    top: 60%;
+    cursor: pointer;
+    background: #EA2626;
+    transform: translate(-50%, -50%);
+}
+
+.join-us:hover {
+    background: white;
+    color: #EA2626;
+    box-shadow: 0 4px 12px rgba(168, 31 ,74, 0.15);
+}
+
+.join-us:focus {
+    outline:0;
+}
+
+.text {
+    position: absolute;
+    width: 80%;
+    left: 11%;
+    top: 15%;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 310%;
+    line-height: 90%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.sub-text {
+    position: absolute;
+    width: 70%;
+    left: 17%;
+    top: 34%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 180%;
+    line-height: 40%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.people {
+    width: 100%;
+    height: 70%;
+}
+
+.about-project{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 300px 300px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.about-title {
+    font-weight: bold;
+    font-size: 240%;
+    line-height: 240%;
+    color: #152046;
+}
+
+.about-text {
+    font-size: 110%;
+    line-height: 140%;
+    color: #797A7E;
+
+}
+
+.about-button {
+    border-radius: 6px;
+    border: none;
+    color: #FFFFFF;
+    font-size: 24px;
+    transition: 250ms ease;
+    font-weight: bold;
+    width: 233px;
+    height: 60px;
+    cursor: pointer;
+    background: #EA2626;
+}
+
+.item1 {
+}
+
+.item2 {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.item3 {
+
+}
+
+.about-button:hover {
+    background: white;
+    color: #EA2626;
+    box-shadow: 0 4px 12px rgba(168, 31 ,74, 0.15);
+}
+
+.about-button:focus {
+    outline:0;
+}
+
+.reviews {
+    position: relative;
+    margin-top: 50px ;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 230%;
+    line-height: 90%;
+    text-align: center;
+    color: #152046;
+}
+
+.first {
+    background: #FFFFFF;
+    text-align: center;
+}
+
+
+.reviews-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px 0 50px 0;
+}

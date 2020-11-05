@@ -1,0 +1,68 @@
+.userBlock{
+    max-width: 700px;
+    border-radius: 20px;
+    background: white;
+    padding: 30px;
+    margin: 100px auto auto;
+    box-shadow: 0 4px 8px 0 red, 0 6px 20px 0 red;
+    position: relative;
+    width: 40%;
+    border-color: #f0f1f2;
+    border-style: ridge;
+    border-width:1px 1px 1px 1px;
+    color: #152046;
+    font-size: 20px;
+    font-weight: initial;
+    text-align: center;
+    display: grid;
+
+}
+
+/*.site-card-border-less-wrapper {*/
+/*    background: #152046;*/
+/*    padding: 15%;*/
+/*}*/
+
+/*[data-theme="dark"] .site-card-border-less-wrapper {
+    background: #303030;
+}*/
+
+.profileImage{
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    left: 37%;
+    position: relative;
+}
+/* === */
+.find-wrap{
+    bottom: 12rem;
+    max-width: 700px;
+    border-radius: 20px;
+    background: white;
+    padding: 30px;
+    color: black;
+    margin: 100px auto auto;
+    box-shadow: 0 4px 8px 0 red, 0 6px 20px 0 red;
+}
+
+
+.find-button {
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 30px;
+    outline: none;
+    border: none;
+    background: red;
+    opacity: 0.7;
+    border-radius: 20px;
+    font-size: 20px;
+    color: white;
+}
+.find-button:hover {
+    cursor: pointer;
+    background: #ea1f13;
+    color: white;
+    transition: .5s;
+}
+

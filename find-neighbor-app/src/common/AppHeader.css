@@ -1,0 +1,44 @@
+.app-header {
+    box-shadow: 0 2px 8px #f0f1f2;
+    height: 55px;
+    z-index: 10;
+    border-color: snow;
+    border-style: solid;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.app-title {
+    color: #EA2626;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    float: left;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0;
+    margin: auto 0;
+}
+
+.newMenu{
+    display: flex;
+    float: right;
+    text-decoration-color: red;
+    padding: 0 30px 0 0;
+}
+
+.menuLink{
+    color: #EA2626;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menuLink:hover{
+    text-decoration-line: underline;
+}
+
+.app-title:hover{
+    text-decoration-line: underline;
+}
+
