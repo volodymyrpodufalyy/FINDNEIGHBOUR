@@ -5,6 +5,7 @@ import App from './app/App';
 import ListOfNeighbor from "./components/ListOfNeighbor";
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
+import "./styles/index.scss";
 
 ReactDOM.render(
     <Router>

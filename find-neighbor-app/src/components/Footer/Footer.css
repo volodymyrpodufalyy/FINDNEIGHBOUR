@@ -1,8 +1,18 @@
 .footer {
-    position: initial;
     padding: 20px;
-    color: white;
-    background-color: #152046;
-    text-align: center;
-    height: 50px;
+    display:flex;
+    background-color: #011B56;
+    justify-content:center;
+    align-items:center;
+    height: 25px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+.text {
+    margin-top: 8px;
+    font-size: 15px;
+    color: rgb(160, 150, 150);
+    opacity: 0.7;
 }

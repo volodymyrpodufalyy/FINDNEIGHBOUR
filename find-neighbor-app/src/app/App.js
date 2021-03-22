@@ -24,7 +24,17 @@ import AdditionalInfo from "../user/signup/AdditionalInfo";
 import FindNeighbor from "../components/FindNeighbor";
 import Footer from '../components/Footer/Footer';
 import UserImage from "../user/signup/UserImage";
+import { Home } from '../pages';
+import classNames from 'classnames';
+
 const { Content } = Layout;
+
+function disableScrolling(){
+    var x=window.scrollX;
+    var y=window.scrollY;
+    window.onscroll=function(){window.scrollTo(x, y);};
+}
+
 
 class App extends Component {
     constructor(props) {
@@ -32,11 +42,13 @@ class App extends Component {
         this.state = {
             currentUser: null,
             isAuthenticated: false,
-            isLoading: false
+            isLoading: false,
+            isChat: false
         }
         this.handleLogout = this.handleLogout.bind(this);
         this.loadCurrentUser = this.loadCurrentUser.bind(this);
         this.handleLogin = this.handleLogin.bind(this);
+        this.handleChat = this.handleChat.bind(this);
 
         notification.config({
             placement: 'topRight',
@@ -94,23 +106,27 @@ class App extends Component {
         this.props.history.push("/");
     }
 
+    handleChat() {
+        this.setState({isChat: true});
+      }
+
     render() {
         if(this.state.isLoading) {
             return <LoadingIndicator />
         }
         return (
-            <Layout className="app-container">
-                <div className="AppHeader">
+            <Layout style={{height:"100vh"}} className="app-container">
+                 <div className="AppHeader">
+                                    <AppHeader isAuthenticated={this.state.isAuthenticated}
+                                            currentUser={this.state.currentUser}
+                                            onLogout={this.handleLogout}>
+                                    </AppHeader>
+                                </div>
 
-                    <AppHeader isAuthenticated={this.state.isAuthenticated}
-                               currentUser={this.state.currentUser}
-                               onLogout={this.handleLogout}>
-                    </AppHeader>
-                </div>
-
-                <div>
+                
                     <Content className="app-content">
-                        <div className="container">
+                        
+                           
                             <Switch>
                                 <Route exact path="/"
                                        render={(props) => <Main isAuthenticated={this.state.isAuthenticated}
@@ -143,8 +159,13 @@ class App extends Component {
                                 <Route path="/findNeighbor/"
                                        render={(props) => <FindNeighbor authenticated={this.state.isAuthenticated}
                                                                         handleLogout={this.handleLogout} currentUser={this.state.currentUser}{...props} /> }></Route>
-
-
+                               
+                                
+                                <Route path="/im" 
+                                       render={(props) => <Home isAuthenticated={this.state.isAuthenticated} currentUser={this.state.currentUser} {...props}  />}>
+                                </Route>
+                                
+                                
                                 {/*<PrivateRoute authenticated={this.state.isAuthenticated} path="/findNeighbor/" component={NotFound} handleLogout={this.handleLogout}></PrivateRoute>*/}
 
 
@@ -152,10 +173,11 @@ class App extends Component {
                                 <Route component={NotFound}></Route>
 
                             </Switch>
-                        </div>
+                            <Footer/>
+                        
                     </Content>
-                </div>
-                <Footer/>
+                
+                
             </Layout>
         );
     }
