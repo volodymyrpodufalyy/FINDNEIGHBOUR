@@ -20,7 +20,7 @@ class MainPage extends Component {
         return(
             <div>
                 <img className="main-image" src={join}/>
-                
+
                 <p className="title__text">Find neighbour</p>
 
                 <p className="sub-text">The social network for your neighborhood.</p>
@@ -36,7 +36,7 @@ class MainPage extends Component {
                <Rewievs />
                <Footer/>
             </div>
-           
+
         );
     }
 }

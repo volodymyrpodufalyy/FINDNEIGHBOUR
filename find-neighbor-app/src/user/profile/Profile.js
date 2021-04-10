@@ -46,11 +46,11 @@ class Profile extends Component {
                 this.setState({
                     serverError: true,
                     isLoading: false
-                });        
+                });
             }
-        });        
+        });
     }
-      
+
     componentDidMount() {
         const username = this.props.match.params.username;
         this.loadUserProfile(username);
@@ -59,7 +59,7 @@ class Profile extends Component {
     componentDidUpdate(nextProps) {
         if(this.props.match.params.username !== nextProps.match.params.username) {
             this.loadUserProfile(nextProps.match.params.username);
-        }        
+        }
     }
 
     render() {
@@ -81,7 +81,7 @@ class Profile extends Component {
 
         return (
             <div className="Profile-main-page">
-                { 
+                {
                     this.state.user ? (
                         <div className="Profile-div1">
                         <div className='profile-user-img'><p><a href={varimg}><img src={varimg}/></a></p></div>
@@ -94,7 +94,7 @@ class Profile extends Component {
                             <textarea className='profile-user-textarea' ref={info} readOnly maxLength={300}>{"this.state.user.id"}</textarea>
                         </div>
                     </div>
-                    ): null               
+                    ): null
                 }
             </div>
         );
@@ -102,6 +102,3 @@ class Profile extends Component {
 }
 
 export default Profile;
-
-
-
