@@ -1,34 +1,38 @@
 .login-container {
-    bottom: 12rem;
-    max-width: 700px;
-    border-radius: 20px;
-    background: white;
-    padding: 30px;
-    color: black;
-    margin: 100px auto auto;
-    box-shadow: 0 4px 8px 0 red, 0 6px 20px 0 red;
+    bottom: 12rem !important;
+    max-width: 700px !important;
+    border-radius: 20px !important;
+    background: white !important;
+    padding: 30px !important; 
+    color: black !important;
+    margin: 100px auto auto !important;
+    box-shadow: 0 4px 8px 0 red, 0 6px 20px 0 red !important;
 }
 
 .page-title {
-    text-align: center;
+    text-align: center !important;
+    padding-bottom: 18px;
+    font-weight: 500;
+    font-size: 17px;
 }
 
 .login-form-button {
-    width: 100%;
-    padding: 10px 0;
-    margin-top: 30px;
-    outline: none;
-    border: none;
-    background: red;
-    opacity: 0.7;
-    border-radius: 20px;
-    font-size: 20px;
-    color: white;
+    width: 100% !important;
+    height: 48px !important;
+    padding: 10px 0 !important;
+    margin-top: 15px !important;
+    outline: none !important;
+    border: none !important;
+    background: red !important;
+    opacity: 0.7 !important;
+    border-radius: 20px !important; 
+    font-size: 20px !important;
+    color: white !important ;
 }
 
 .login-form-button:hover {
-    cursor: pointer;
-    background: #ea1f13;
-    color: white;
-    transition: .5s;
+    cursor: pointer !important;
+    background: #ea1f13 !important;
+    color: white !important;
+    transition: .5s !important;
 }

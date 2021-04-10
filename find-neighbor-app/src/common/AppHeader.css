@@ -1,37 +1,39 @@
 .app-header {
-    box-shadow: 0 2px 8px #f0f1f2;
-    height: 55px;
+    height: 56px;
     z-index: 10;
-    border-color: snow;
-    border-style: solid;
-    padding: 15px;
+    background-color: #fff;
+    padding-top: 15px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: space-between;
 }
 
 .app-title {
     color: #EA2626;
-    height: 50px;
-    line-height: 50px;
     font-size: 24px;
     float: left;
     font-weight: bold;
-    text-decoration: none;
-    padding: 0;
+    padding-left: 15px;
     margin: auto 0;
 }
 
+.app-title:hover{
+    color: #EA2626 !important;
+}
 .newMenu{
     display: flex;
     float: right;
-    text-decoration-color: red;
-    padding: 0 30px 0 0;
+    padding-right: 10px;
+    border: 0px;
+    padding-bottom: 10px !important;
+    margin-bottom: 10px !important;
 }
 
 .menuLink{
-    color: #EA2626;
     font-weight: bold;
     text-decoration: none;
+    color: #000 !important;
+    padding-bottom: 15px;
 }
 
 .menuLink:hover{
@@ -42,3 +44,41 @@
     text-decoration-line: underline;
 }
 
+.signup__btn {
+    width: 100px;
+    height: 30px;
+    display: flex;
+    background-color: #EA2626;
+    border-radius: 5px;
+    align-items: center;
+    margin-bottom: 10px;
+    
+}
+
+.register-link{
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #fff !important;
+    font-size: 18px;
+}
+
+.register-link:hover{
+    text-decoration-line: underline;
+    color: #000;
+}
+.login-link{
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
+.login-link:hover{
+    text-decoration-line: underline;
+    color: #000 !important;
+}
+.ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left {
+     border-right: 0px !important;
+}

@@ -1,13 +1,11 @@
-import { Button } from 'antd';
-import './MainPage.css';
-import join from './main.png';
 import React, {Component} from "react";
 import Rewievs from "./Rewievs";
 import Container from 'react-bootstrap/Container';
-import black from './black.png';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import people from './people.png';
+import { Button } from 'antd';
+import join from './main.png';
+import Footer from '../Footer/Footer';
+import './MainPage.css';
 
 class MainPage extends Component {
     constructor(props, context) {
@@ -22,11 +20,12 @@ class MainPage extends Component {
         return(
             <div>
                 <img className="main-image" src={join}/>
-                <p className="text">Find neighbor</p>
+                
+                <p className="title__text">Find neighbour</p>
 
                 <p className="sub-text">The social network for your neighborhood.</p>
 
-                <Button className="join-us" block onClick={(e) => this.onclick(e)}>Join us</Button>
+                <button className="join__us" block onClick={(e) => this.onclick(e)}>Join us</button>
 
                 <Container>
                     <Row>
@@ -35,7 +34,9 @@ class MainPage extends Component {
                 </Container>
 
                <Rewievs />
+               <Footer/>
             </div>
+           
         );
     }
 }

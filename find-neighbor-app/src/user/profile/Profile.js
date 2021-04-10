@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 // import PollList from '../../poll/PollList';
-import { getUserProfile } from '../../util/APIUtils';
+import { getCurrentUser, getUserProfile } from '../../util/APIUtils';
 import { Avatar, Tabs } from 'antd';
-import { getAvatarColor } from '../../util/Colors';
+// import { getAvatarColor } from '../../util/Colors';
 import { formatDate } from '../../util/Helpers';
 import LoadingIndicator  from '../../common/LoadingIndicator';
 import './Profile.css';
@@ -10,6 +10,10 @@ import NotFound from '../../common/NotFound';
 import ServerError from '../../common/ServerError';
 
 const TabPane = Tabs.TabPane;
+
+let info = React.createRef();
+
+const varimg = "http://ocalafarms.com/wp-content/uploads/2016/09/default-user-img.jpg"
 
 class Profile extends Component {
     constructor(props) {
@@ -26,7 +30,7 @@ class Profile extends Component {
             isLoading: true
         });
 
-        getUserProfile(username)
+        getCurrentUser()
         .then(response => {
             this.setState({
                 user: response,
@@ -76,25 +80,20 @@ class Profile extends Component {
         };
 
         return (
-            <div className="profile">
+            <div className="Profile-main-page">
                 { 
                     this.state.user ? (
-                        <div className="user-profile">
-                            <div className="user-details">
-                                <div className="user-avatar">
-                                    <Avatar className="user-avatar-circle" style={{ backgroundColor: getAvatarColor(this.state.user.name)}}>
-                                        {this.state.user.name[0].toUpperCase()}
-                                    </Avatar>
-                                </div>
-                                <div className="user-summary">
-                                    <div className="full-name">{this.state.user.name}</div>
-                                    <div className="username">@{this.state.user.username}</div>
-                                    <div className="user-joined">
-                                        Joined {formatDate(this.state.user.joinedAt)}
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="Profile-div1">
+                        <div className='profile-user-img'><p><a href={varimg}><img src={varimg}/></a></p></div>
+                        <div className='profile-user-name'><p>{this.state.user.name}</p></div>
+                        {/* <div><NavLink to={"./Settings"} className='settings' >Settings</NavLink></div> */}
+                        <div className="profile-user-mail"><p>{this.state.user.id}</p></div>
+                        <div className='kind_of_activity'><p>Стать: {this.state.user.sex}</p></div>
+                        <div >
+                            <div><p className='About_p'>About:</p></div>
+                            <textarea className='profile-user-textarea' ref={info} readOnly maxLength={300}>{"this.state.user.id"}</textarea>
                         </div>
+                    </div>
                     ): null               
                 }
             </div>
@@ -103,3 +102,6 @@ class Profile extends Component {
 }
 
 export default Profile;
+
+
+

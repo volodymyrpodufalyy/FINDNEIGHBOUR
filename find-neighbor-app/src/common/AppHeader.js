@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import {
-    Link,
-    withRouter
-} from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './AppHeader.css';
+import { Layout, Menu, Button } from 'antd';
+import { DownloadOutlined } from '@ant-design/icons';
 
-import { Layout, Menu, Dropdown, Icon } from 'antd';
-import Profile from "../user/profile/Profile";
 const Header = Layout.Header;
 
 class AppHeader extends Component {
@@ -26,12 +23,12 @@ class AppHeader extends Component {
         console.log(this.props.currentUser);
         if(this.props.currentUser) {
             menuItems = [
-                <Menu.Item key="" className="newMenu">
-                    <Link  className="menuLink" to="">Chat</Link>
+                <Menu.Item key="chat" className="newMenu">
+                    <Link  className="menuLink" to="/im">Chat</Link>
                 </Menu.Item>,
-                <Menu.Item key="" className="newMenu">
-                    <Link className="menuLink" to="">Settings</Link>
-                </Menu.Item>,
+                // <Menu.Item key="" className="newMenu">
+                //     <Link className="menuLink" to="">Settings</Link>
+                // </Menu.Item>,
                 <Menu.Item key="" className="newMenu">
                     <Link className="menuLink" to="/findNeighbor">Find Neighbor</Link>
                  </Menu.Item>,
@@ -44,11 +41,13 @@ class AppHeader extends Component {
             ];
         } else {
             menuItems = [
-                <Menu.Item key="/login" className="newMenu">
-                    <Link  className="menuLink" to="/login">Login</Link>
-                </Menu.Item>,
                 <Menu.Item key="/signup" className="newMenu">
-                    <Link className="menuLink" to="/signup">Signup</Link>
+                    <div className="signup__btn">
+                    <Link className="register-link" to="/signup">Join</Link>
+                    </div>
+                </Menu.Item>,
+                <Menu.Item key="/login" className="newMenu">
+                    <Link  className="login-link" to="/login">Have an account</Link>
                 </Menu.Item>
             ];
         }

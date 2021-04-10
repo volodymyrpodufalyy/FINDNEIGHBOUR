@@ -34,6 +34,7 @@ class Main extends Component {
     render() {
         return (
             <MainPage />
+            
         )
     }
 }

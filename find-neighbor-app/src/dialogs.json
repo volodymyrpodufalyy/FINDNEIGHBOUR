@@ -1,0 +1,23 @@
+[
+    {   
+        "_id": "f4603a27da075dbb7146f7b3ea1df400",
+        "text": "Кохайтеся, чорнобриві,Та не з москалями,Бо москалі — чужі люде, Роблять лихо з вами.Москаль любить жартуючи",
+        "created_at": "2021-03-18T00:15:32.000Z",
+        "user": {
+            "_id": "f4603a27da075dbb7146f7b3ea1df400",
+            "fullname": "Аня Хімія",
+            "avatar": null
+        }
+    },
+    {   
+        "_id": "f4603a27da075dbb7146f7b3ea1df400",
+       "text": "Sorry, but I love only like a friend",
+        "created_at": "2021-03-18T00:42:11.000Z",
+        "user": {
+            "_id": "f4603a27da075dbb7146f7b3ea1df400",
+            "fullname": "Anna Dorph",
+            "avatar":
+            "https://i.pinimg.com/236x/85/75/97/8575978855561d4172343d218ca39207.jpg"
+        }
+    }
+]

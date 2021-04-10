@@ -3,8 +3,21 @@
     height: 100%;
     filter: brightness(40%);
 }
+.title__text {
+    position: absolute;
+    width: 80%;
+    left: 11%;
+    top: 15%;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 310%;
+    line-height: 90%;
+    text-align: center;
+    color: #FFFFFF;
+}
 
-.join-us {
+
+.join__us {
     position: absolute;
     border-radius: 6px;
     border: none;
@@ -31,18 +44,6 @@
     outline:0;
 }
 
-.text {
-    position: absolute;
-    width: 80%;
-    left: 11%;
-    top: 15%;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 310%;
-    line-height: 90%;
-    text-align: center;
-    color: #FFFFFF;
-}
 
 .sub-text {
     position: absolute;
@@ -97,8 +98,6 @@
     background: #EA2626;
 }
 
-.item1 {
-}
 
 .item2 {
     grid-column-start: 2;
@@ -107,9 +106,6 @@
     grid-row-end: 3;
 }
 
-.item3 {
-
-}
 
 .about-button:hover {
     background: white;
@@ -133,8 +129,10 @@
 }
 
 .first {
-    background: #FFFFFF;
     text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 8px;
 }
 
 

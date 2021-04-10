@@ -59,12 +59,27 @@ public class UserController {
     @GetMapping("/me")
     @PreAuthorize("hasRole('USER')")
     public UserSummary getCurrentUser(@CurrentUser UserPrincipal currentUser) {
-        UserSummary userSummary = new UserSummary(currentUser.getId(), currentUser.getUsername(), currentUser.getName());
+        UserSummary userSummary = new UserSummary(
+                currentUser.getId(),
+                currentUser.getUsername(),
+                currentUser.getName(),
+                currentUser.isPets(),
+                currentUser.isBadHabits(),
+                currentUser.isKindOfActivity(),
+                currentUser.getSex(),
+                currentUser.getMaritalStatus(),
+                currentUser.getAge(),
+                currentUser.isHaveJobOrJobless(),
+                currentUser.getPhoneNumber(),
+                currentUser.getMoreAboutUser()
+        );
         System.out.println("Id " + currentUser.getId());
         System.out.println(currentUser.getUsername());
         System.out.println(currentUser.getName());
         return userSummary;
     }
+
+
 
     @GetMapping("/checkUsernameAvailability")
     public UserIdentityAvailability checkUsernameAvailability(@RequestParam(value = "username") String username) {
@@ -87,12 +102,16 @@ public class UserController {
     }
 
     @GetMapping("/userProfileForSearching")
-    public UserProfile findAdditionalInfoByUserId(@RequestParam Long userId){
+    public UserProfile findAdditionalInfoByUserId(@RequestParam Long userId) {
         Optional<User> optionalUser = userDAO.findById(userId);
         User user = optionalUser.isPresent() ? optionalUser.get() : new User();
         AdditionalInfo additionalInfo = findAdditionalInfo(user);
-        UserProfile userProfile = new UserProfile(userId, user.getName(), additionalInfo.getAge(), additionalInfo.getSex(),
-                additionalInfo.getPhoneNumber());
+        UserProfile userProfile = new UserProfile(userId,
+                user.getName(),
+                additionalInfo.getAge(),
+                additionalInfo.getSex(),
+                additionalInfo.getPhoneNumber()
+        );
         return userProfile;
     }
 
