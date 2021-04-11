@@ -5,7 +5,7 @@
     width: 1140px;
     height: 100%;
     margin: 0 auto;
-    box-shadow: 0px 0px 25px rgba(0,0,0,0.04204);
+    box-shadow: 12px 12px 12px  rgba(25, 25, 29, 0.2);
     &__sidebar {
         border-right: 1px solid #f7f7f7;
         width: 320px;
@@ -23,13 +23,13 @@
                     margin-right: 5px;
                 }
             }
-            .ant-btn { 
+            .ant-btn {
                 border: 0px ;
             }
         }
         &-dialogs {
             height: calc(100% - 136px);
-  
+
             .dialogs {
                 height: 100%;
                 overflow: auto;
@@ -62,15 +62,15 @@
             border-bottom: 1px solid #f7f7f7;
 
             &-center {
-                text-align: center; 
+                text-align: center;
             }
-   
+
             &-username {
                 font-weight: 500;
                 display: block;
                 margin-bottom: 5px;
             }
-            .ant-btn { 
+            .ant-btn {
                 border: 0px ;
             }
         }

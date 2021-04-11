@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { Button } from 'antd';
 import join from './main.png';
-
+import Footer from '../Footer/Footer';
 import './MainPage.css';
 
 class MainPage extends Component {
@@ -20,7 +20,7 @@ class MainPage extends Component {
         return(
             <div>
                 <img className="main-image" src={join}/>
-                
+
                 <p className="title__text">Find neighbour</p>
 
                 <p className="sub-text">The social network for your neighborhood.</p>
@@ -34,7 +34,9 @@ class MainPage extends Component {
                 </Container>
 
                <Rewievs />
+               <Footer/>
             </div>
+
         );
     }
 }

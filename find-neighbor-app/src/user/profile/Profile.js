@@ -83,7 +83,6 @@ class Profile extends Component {
         };
 
         return (
-<<<<<<< HEAD
             <div className = 'Profile-main-page'>
                 { 
 
@@ -93,23 +92,11 @@ class Profile extends Component {
                         {/*<div><NavLink to={"./Settings"} className='settings' >Settings</NavLink></div>*/}
                         <div className="profile-user-mail"><p>{"this.state.user.id"}</p></div>
                         <div className='kind_of_activity'><p>Kind of activity: {"this.state.user.name"}</p></div>
-=======
-            <div className="Profile-main-page">
-                {
-                    this.state.user ? (
-                        <div className="Profile-div1">
-                        <div className='profile-user-img'><p><a href={varimg}><img src={varimg}/></a></p></div>
-                        <div className='profile-user-name'><p>{this.state.user.name}</p></div>
-                        {/* <div><NavLink to={"./Settings"} className='settings' >Settings</NavLink></div> */}
-                        <div className="profile-user-mail"><p>{this.state.user.id}</p></div>
-                        <div className='kind_of_activity'><p>Стать: {this.state.user.sex}</p></div>
->>>>>>> c32e31f29b2f9624cf14cb9ecb12ee673876adab
                         <div >
                             <div><p className='About_p'>About:</p></div>
                             <textarea className='profile-user-textarea' ref={info} readOnly maxLength={300}>{"this.state.user.id"}</textarea>
                         </div>
                     </div>
-<<<<<<< HEAD
 
                     // this.state.user ? (
                     //     <div className="user-profile">
@@ -129,9 +116,6 @@ class Profile extends Component {
                     //         </div>
                     //     </div>
                     // ): null               
-=======
-                    ): null
->>>>>>> c32e31f29b2f9624cf14cb9ecb12ee673876adab
                 }
             </div>
         );

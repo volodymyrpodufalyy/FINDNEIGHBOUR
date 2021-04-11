@@ -44,6 +44,16 @@ public class User  extends DateAudit {
     @Size(max = 100)
     private String password;
 
+    private boolean pets;
+    private boolean badHabits;
+    private boolean kindOfActivity;
+    private String sex;
+    private String maritalStatus;
+    private int age;
+    private boolean haveJobOrJobless;
+    private String phoneNumber;
+    private String moreAboutUser;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
@@ -52,11 +62,131 @@ public class User  extends DateAudit {
 
     public User(){}
 
+
+    public User(String name, String username, String email, String password, boolean pets, boolean badHabits,
+                boolean kindOfActivity, String sex,  String maritalStatus, int age,
+                boolean haveJobOrJobless, String phoneNumber, String moreAboutUser
+    ) {
+        this.name = name;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.pets = pets;
+        this.badHabits = badHabits;
+        this.kindOfActivity = kindOfActivity;
+        this.sex = sex;
+        this.maritalStatus = maritalStatus;
+        this.age = age;
+        this.haveJobOrJobless = haveJobOrJobless;
+        this.phoneNumber = phoneNumber;
+        this.moreAboutUser = moreAboutUser;
+    }
+
     public User(String name, String username, String email, String password) {
         this.name = name;
         this.username = username;
         this.email = email;
         this.password = password;
+    }
+
+    public User(boolean pets,
+                boolean badHabits,
+                boolean kindOfActivity,
+                String sex,
+                String maritalStatus,
+                int age,
+                boolean haveJobOrJobless,
+                String phoneNumber,
+                String moreAboutUser) {
+        this.pets = pets;
+        this.badHabits = badHabits;
+        this.kindOfActivity = kindOfActivity;
+        this.sex = sex;
+        this.maritalStatus = maritalStatus;
+        this.age = age;
+        this.haveJobOrJobless = haveJobOrJobless;
+        this.phoneNumber = phoneNumber;
+        this.moreAboutUser = moreAboutUser;
+    }
+
+    public User(int age) {
+        super();
+    }
+
+    public User(User user) {
+        super();
+    }
+
+    public boolean isPets() {
+        return pets;
+    }
+
+    public void setPets(boolean pets) {
+        this.pets = pets;
+    }
+
+    public boolean isBadHabits() {
+        return badHabits;
+    }
+
+    public void setBadHabits(boolean badHabits) {
+        this.badHabits = badHabits;
+    }
+
+    public boolean isKindOfActivity() {
+        return kindOfActivity;
+    }
+
+    public void setKindOfActivity(boolean kindOfActivity) {
+        this.kindOfActivity = kindOfActivity;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getMaritalStatus() {
+        return maritalStatus;
+    }
+
+    public void setMaritalStatus(String maritalStatus) {
+        this.maritalStatus = maritalStatus;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public boolean isHaveJobOrJobless() {
+        return haveJobOrJobless;
+    }
+
+    public void setHaveJobOrJobless(boolean haveJobOrJobless) {
+        this.haveJobOrJobless = haveJobOrJobless;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getMoreAboutUser() {
+        return moreAboutUser;
+    }
+
+    public void setMoreAboutUser(String moreAboutUser) {
+        this.moreAboutUser = moreAboutUser;
     }
 
     public Long getId() {
@@ -107,4 +237,6 @@ public class User  extends DateAudit {
         this.roles = roles;
     }
 
+
 }
+

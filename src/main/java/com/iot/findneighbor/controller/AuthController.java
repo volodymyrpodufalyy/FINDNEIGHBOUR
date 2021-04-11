@@ -6,7 +6,6 @@ import com.iot.findneighbor.exception.AppException;
 import com.iot.findneighbor.request.*;
 import com.iot.findneighbor.security.JwtTokenProvider;
 import com.iot.findneighbor.service.AuthService;
-import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,12 +15,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
-import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.util.Collections;
@@ -123,8 +119,18 @@ public class AuthController {
         URI location = ServletUriComponentsBuilder
                 .fromCurrentContextPath().path("/signup/{username}/userImage")
                 .buildAndExpand(userId).toUri();
-    return ResponseEntity.created(location).body(new ApiResponse(true, "Additional Info registered successfully"));
+        return ResponseEntity.created(location).body(new ApiResponse(true, "Additional Info registered successfully"));
 
+    }
+
+    @PutMapping(path = "signup/{username}/additionalInfo")
+    public ResponseEntity<?> updateUser(@PathVariable("username") String username,
+                                                  @RequestBody User user) {
+        authService.updateUser(username,user);
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentContextPath().path("/signup/{username}/userImage")
+                .buildAndExpand(username).toUri();
+        return ResponseEntity.created(location).body(new ApiResponse(true, "Additional Info registered successfully"));
     }
 
     @RequestMapping (value = "signup/{username}/userImage", method = RequestMethod.POST,

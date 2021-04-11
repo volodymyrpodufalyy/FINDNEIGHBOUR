@@ -41,15 +41,15 @@ export function signup(signupRequest) {
     });
 }
 
-export function additionalInfo(additionalInfoRequest, username) {
+export function additionalInfo(user, username) {
 
     return request({
 
         url: API_BASE_URL + "/auth/signup/"+
             Object.values(username)
             +"/additionalInfo",
-        method: 'POST',
-        body: JSON.stringify(additionalInfoRequest)
+        method: 'PUT',
+        body: JSON.stringify(user)
 
     });
 }
@@ -124,6 +124,8 @@ export function checkEmailAvailability(email) {
      });
  }
 
+
+
 export function getCurrentUser() {
     if(!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");
@@ -135,12 +137,6 @@ export function getCurrentUser() {
     });
 }
 
-export function getUserProfile(username) {
-    return request({
-        url: API_BASE_URL + "/users/" + username,
-        method: 'GET'
-    });
-}
 
 export function checkUserAvailability(userId) {
     return request({
