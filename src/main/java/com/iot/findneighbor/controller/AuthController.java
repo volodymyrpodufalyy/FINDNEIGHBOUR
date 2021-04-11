@@ -106,22 +106,22 @@ public class AuthController {
         return ResponseEntity.created(location).body(new ApiResponse(true, "User registered successfully"));
     }
 
-    @PostMapping("signup/{username}/additionalInfo")
-    public ResponseEntity<?> registerUserAdditionalInfo(@Valid @RequestBody AdditionalInfo additionalInfoRequest,
-                                                        @PathVariable String username) {
-        System.out.println(additionalInfoRequest.getUser());
-        Optional<User> optional = userDAO.findByUsername(username);
-        User user = optional.isPresent() ? optional.get() : new User();
-        additionalInfoRequest.setUser(user);
-        AdditionalInfo additionalInfo = additionalInfoDAO.save(additionalInfoRequest);
-        User userToGetUsername = additionalInfo.getUser();
-        String userId = userToGetUsername.getUsername();
-        URI location = ServletUriComponentsBuilder
-                .fromCurrentContextPath().path("/signup/{username}/userImage")
-                .buildAndExpand(userId).toUri();
-        return ResponseEntity.created(location).body(new ApiResponse(true, "Additional Info registered successfully"));
-
-    }
+//    @PostMapping("signup/{username}/additionalInfo")
+//    public ResponseEntity<?> registerUserAdditionalInfo(@Valid @RequestBody AdditionalInfo additionalInfoRequest,
+//                                                        @PathVariable String username) {
+//        System.out.println(additionalInfoRequest.getUser());
+//        Optional<User> optional = userDAO.findByUsername(username);
+//        User user = optional.isPresent() ? optional.get() : new User();
+//        additionalInfoRequest.setUser(user);
+//        AdditionalInfo additionalInfo = additionalInfoDAO.save(additionalInfoRequest);
+//        User userToGetUsername = additionalInfo.getUser();
+//        String userId = userToGetUsername.getUsername();
+//        URI location = ServletUriComponentsBuilder
+//                .fromCurrentContextPath().path("/signup/{username}/userImage")
+//                .buildAndExpand(userId).toUri();
+//        return ResponseEntity.created(location).body(new ApiResponse(true, "Additional Info registered successfully"));
+//
+//    }
 
     @PutMapping(path = "signup/{username}/additionalInfo")
     public ResponseEntity<?> updateUser(@PathVariable("username") String username,

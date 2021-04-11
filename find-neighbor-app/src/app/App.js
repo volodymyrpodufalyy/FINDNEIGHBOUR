@@ -123,10 +123,10 @@ class App extends Component {
                                     </AppHeader>
                                 </div>
 
-
+                
                     <Content className="app-content">
-
-
+                        
+                           
                             <Switch>
                                 <Route exact path="/"
                                        render={(props) => <Main isAuthenticated={this.state.isAuthenticated}
@@ -136,19 +136,19 @@ class App extends Component {
                                        render={(props) => <Login onLogin={this.handleLogin} {...props} />}></Route>
                                 <Route path="/signup"
                                        render={(props) => <Signup onLogin={this.handleLogin} {...props} isAuthenticated={this.state.isAuthenticated}/>}></Route>
-
+                               
                                 <Route path="/:username/additionalInfo" component={AdditionalInfo}></Route>
-
+                                
                                 <Route path="/:username/userImage" component={UserImage}></Route>
-
+                                
                                 <Route path="/:username/filters" component={Filters}></Route>
-
+                                
                                 {/*<Route*/}
                                 {/*    //  currentUser={this.state.currentUser}*/}
-
+                               
                                 {/*    path="/:username/address" component={Address}></Route>*/}
-
-                                   <Route
+                                  
+                                   <Route                  
                                     path="/:username/address"  render = {(props) => <Address {...props} onLogin={this.handleLogin} isAuthenticated={this.isAuthenticated}
                                                                        currentUser={this.currentUser}/>}>
                                     </Route>
@@ -158,13 +158,13 @@ class App extends Component {
                                 <Route path="/findNeighbor/"
                                        render={(props) => <FindNeighbor authenticated={this.state.isAuthenticated}
                                                                         handleLogout={this.handleLogout} currentUser={this.state.currentUser}{...props} /> }></Route>
-
-
-                                <Route path="/im"
+                               
+                                
+                                <Route path="/im" 
                                        render={(props) => <Home isAuthenticated={this.state.isAuthenticated} currentUser={this.state.currentUser} {...props}  />}>
                                 </Route>
-
-
+                                
+                                
                                 {/*<PrivateRoute authenticated={this.state.isAuthenticated} path="/findNeighbor/" component={NotFound} handleLogout={this.handleLogout}></PrivateRoute>*/}
 
 
@@ -172,11 +172,11 @@ class App extends Component {
                                 <Route component={NotFound}></Route>
 
                             </Switch>
-
-
+                          
+                        
                     </Content>
-
-
+                
+                
             </Layout>
         );
     }

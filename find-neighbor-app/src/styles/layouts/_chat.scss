@@ -23,13 +23,13 @@
                     margin-right: 5px;
                 }
             }
-            .ant-btn {
+            .ant-btn { 
                 border: 0px ;
             }
         }
         &-dialogs {
             height: calc(100% - 136px);
-
+  
             .dialogs {
                 height: 100%;
                 overflow: auto;
@@ -62,15 +62,15 @@
             border-bottom: 1px solid #f7f7f7;
 
             &-center {
-                text-align: center;
+                text-align: center; 
             }
-
+   
             &-username {
                 font-weight: 500;
                 display: block;
                 margin-bottom: 5px;
             }
-            .ant-btn {
+            .ant-btn { 
                 border: 0px ;
             }
         }
